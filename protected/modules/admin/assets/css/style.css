@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+.clear{
+	clear:both;
+}
+.hover{
+	background-color:#999;
+	color:#999;
+}
+#content{
+	
+}
+
+#left{
+	width:220px;
+	float:left;
+}
+
+#left ul li ul li{
+	list-style:none;
+}
+#right{
+	float:left;
+}
