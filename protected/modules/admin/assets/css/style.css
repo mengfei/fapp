@@ -21,3 +21,10 @@
 #right{
 	float:left;
 }
+.menu ul{
+	display:none;
+}
+ul {
+	margin:0px;
+	padding:0px;
+}

@@ -6,15 +6,15 @@ $this->widget('zii.widgets.CMenu', array(
         array('label'=>'首页', 
         	  'url'=>array('#'),
         	  'active'=>true,
-        	  'itemOptions'=>array('class'=>'dropdown '),
+        	  'itemOptions'=>array('class'=>'menu'),
         ),
         // 'Products' menu item will be selected no matter which tag parameter value is since it's not specified.
         array('label'=>'用户管理', 
         	'url'=>array('#'), 
-        	'itemOptions'=>array('class'=>'dropdown '),
+        	'itemOptions'=>array('class'=>'menu'),
         	'items'=>array(
-            	array('label'=>'New Arrivals', 'url'=>array('#', 'tag'=>'new')),
-            	array('label'=>'Most Popular', 'url'=>array('#', 'tag'=>'popular')),
+            	array('label'=>'New Arrivals', 'url'=>array('#')),
+            	array('label'=>'Most Popular', 'url'=>array('#')),
         )),
         array('label'=>'Login', 'url'=>array('site/login'), 'visible'=>Yii::app()->user->isGuest),		
     ),
@@ -23,16 +23,17 @@ $this->widget('zii.widgets.CMenu', array(
 ?>
 <script>
 $(function(){
-	$(".dropdown ul").addClass("dropdown-menu");
-	$(".dropdown ul li").each(function(i){
-		$(".dropdown ul li").find("a").click(function(){
-			alert(11);
-			if($(this).parent().parent().hasClass("dropdown-menu")){
-				$(this).parent().removeClass("dropdown-menu");
-			}else{
-				$(this).parent().closest().removeClass("dropdown-menu");
-			}
-		});
+	$(".menu > a").click(function(){
+		var ulNode = $(this).next("ul");
+		if(ulNode.css("display") == "none"){
+			ulNode.css("display","block");
+			$(".menu").removeClass("active");
+			ulNode.parent().addClass("active");
+		}else{
+			$(".menu").removeClass("active");
+			$(this).parent().addClass("active");
+			ulNode.css("display","none");
+		}
 	});
 });
 
