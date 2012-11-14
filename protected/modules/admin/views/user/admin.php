@@ -42,6 +42,7 @@ $('.search-form form').submit(function(){
 	'itemsCssClass'=>'table table-bordered',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'pagerCssClass'=>'pagination',
 	'columns'=>array(
 		'id',
 		'username',

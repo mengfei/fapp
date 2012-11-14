@@ -5101,3 +5101,449 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/favicon.ico
 ---
+2012/11/14 16:03:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "assets/1b97d45c/images/logo.png"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('assets/1b97d45c...')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/1b97d45c/images/logo.png
+HTTP_REFERER=http://fapp.test.com/index.php/admin/user/
+---
+2012/11/14 16:03:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:07:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "assets/1b97d45c/images/logo.png"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('assets/1b97d45c...')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/1b97d45c/images/logo.png
+HTTP_REFERER=http://fapp.test.com/index.php/admin/user/admin
+---
+2012/11/14 16:07:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:08:32 [error] [php] include(pagination.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (D:\wamp\www\framework\YiiBase.php:426)
+Stack trace:
+#0 D:\wamp\www\framework\web\CWidgetFactory.php(147): import()
+#1 D:\wamp\www\framework\web\CBaseController.php(147): CWidgetFactory->createWidget()
+#2 D:\wamp\www\framework\web\CBaseController.php(173): CGridView->createWidget()
+#3 D:\wamp\www\framework\zii\widgets\CBaseListView.php(269): CGridView->widget()
+#4 D:\wamp\www\framework\zii\widgets\CBaseListView.php(161): CGridView->renderPager()
+#5 unknown(0): CGridView->renderSection()
+#6 D:\wamp\www\framework\zii\widgets\CBaseListView.php(144): preg_replace_callback()
+#7 D:\wamp\www\framework\zii\widgets\CBaseListView.php(129): CGridView->renderContent()
+#8 D:\wamp\www\framework\web\CBaseController.php(174): CGridView->run()
+#9 D:\wamp\www\fapp\protected\modules\admin\views\user\admin.php(54): UserController->widget()
+#10 D:\wamp\www\framework\web\CBaseController.php(127): require()
+#11 D:\wamp\www\framework\web\CBaseController.php(96): UserController->renderInternal()
+#12 D:\wamp\www\framework\web\CController.php(870): UserController->renderFile()
+#13 D:\wamp\www\framework\web\CController.php(783): UserController->renderPartial()
+#14 D:\wamp\www\fapp\protected\modules\admin\controllers\UserController.php(143): UserController->render()
+#15 D:\wamp\www\framework\web\actions\CInlineAction.php(50): UserController->actionAdmin()
+#16 D:\wamp\www\framework\web\CController.php(309): CInlineAction->runWithParams()
+#17 D:\wamp\www\framework\web\filters\CFilterChain.php(134): UserController->runAction()
+#18 D:\wamp\www\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#19 D:\wamp\www\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#20 D:\wamp\www\framework\web\filters\CInlineFilter.php(59): UserController->filterAccessControl()
+#21 D:\wamp\www\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#22 D:\wamp\www\framework\web\CController.php(292): CFilterChain->run()
+#23 D:\wamp\www\framework\web\CController.php(266): UserController->runActionWithFilters()
+#24 D:\wamp\www\framework\web\CWebApplication.php(283): UserController->run()
+#25 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#26 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 D:\wamp\www\fapp\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/admin/user/admin
+in D:\wamp\www\fapp\protected\modules\admin\views\user\admin.php (54)
+in D:\wamp\www\fapp\protected\modules\admin\controllers\UserController.php (143)
+in D:\wamp\www\fapp\index.php (13)
+2012/11/14 16:08:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:08:40 [error] [php] include(pagination.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (D:\wamp\www\framework\YiiBase.php:426)
+Stack trace:
+#0 D:\wamp\www\framework\web\CWidgetFactory.php(147): import()
+#1 D:\wamp\www\framework\web\CBaseController.php(147): CWidgetFactory->createWidget()
+#2 D:\wamp\www\framework\web\CBaseController.php(173): CGridView->createWidget()
+#3 D:\wamp\www\framework\zii\widgets\CBaseListView.php(269): CGridView->widget()
+#4 D:\wamp\www\framework\zii\widgets\CBaseListView.php(161): CGridView->renderPager()
+#5 unknown(0): CGridView->renderSection()
+#6 D:\wamp\www\framework\zii\widgets\CBaseListView.php(144): preg_replace_callback()
+#7 D:\wamp\www\framework\zii\widgets\CBaseListView.php(129): CGridView->renderContent()
+#8 D:\wamp\www\framework\web\CBaseController.php(174): CGridView->run()
+#9 D:\wamp\www\fapp\protected\modules\admin\views\user\admin.php(54): UserController->widget()
+#10 D:\wamp\www\framework\web\CBaseController.php(127): require()
+#11 D:\wamp\www\framework\web\CBaseController.php(96): UserController->renderInternal()
+#12 D:\wamp\www\framework\web\CController.php(870): UserController->renderFile()
+#13 D:\wamp\www\framework\web\CController.php(783): UserController->renderPartial()
+#14 D:\wamp\www\fapp\protected\modules\admin\controllers\UserController.php(143): UserController->render()
+#15 D:\wamp\www\framework\web\actions\CInlineAction.php(50): UserController->actionAdmin()
+#16 D:\wamp\www\framework\web\CController.php(309): CInlineAction->runWithParams()
+#17 D:\wamp\www\framework\web\filters\CFilterChain.php(134): UserController->runAction()
+#18 D:\wamp\www\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#19 D:\wamp\www\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#20 D:\wamp\www\framework\web\filters\CInlineFilter.php(59): UserController->filterAccessControl()
+#21 D:\wamp\www\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#22 D:\wamp\www\framework\web\CController.php(292): CFilterChain->run()
+#23 D:\wamp\www\framework\web\CController.php(266): UserController->runActionWithFilters()
+#24 D:\wamp\www\framework\web\CWebApplication.php(283): UserController->run()
+#25 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#26 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 D:\wamp\www\fapp\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/admin/user/admin
+in D:\wamp\www\fapp\protected\modules\admin\views\user\admin.php (54)
+in D:\wamp\www\fapp\protected\modules\admin\controllers\UserController.php (143)
+in D:\wamp\www\fapp\index.php (13)
+2012/11/14 16:08:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:08:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "assets/1b97d45c/images/logo.png"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('assets/1b97d45c...')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/1b97d45c/images/logo.png
+HTTP_REFERER=http://fapp.test.com/index.php/admin/default/
+---
+2012/11/14 16:08:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:08:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:08:51 [error] [php] include(pagination.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (D:\wamp\www\framework\YiiBase.php:426)
+Stack trace:
+#0 D:\wamp\www\framework\web\CWidgetFactory.php(147): import()
+#1 D:\wamp\www\framework\web\CBaseController.php(147): CWidgetFactory->createWidget()
+#2 D:\wamp\www\framework\web\CBaseController.php(173): CGridView->createWidget()
+#3 D:\wamp\www\framework\zii\widgets\CBaseListView.php(269): CGridView->widget()
+#4 D:\wamp\www\framework\zii\widgets\CBaseListView.php(161): CGridView->renderPager()
+#5 unknown(0): CGridView->renderSection()
+#6 D:\wamp\www\framework\zii\widgets\CBaseListView.php(144): preg_replace_callback()
+#7 D:\wamp\www\framework\zii\widgets\CBaseListView.php(129): CGridView->renderContent()
+#8 D:\wamp\www\framework\web\CBaseController.php(174): CGridView->run()
+#9 D:\wamp\www\fapp\protected\modules\admin\views\user\admin.php(54): UserController->widget()
+#10 D:\wamp\www\framework\web\CBaseController.php(127): require()
+#11 D:\wamp\www\framework\web\CBaseController.php(96): UserController->renderInternal()
+#12 D:\wamp\www\framework\web\CController.php(870): UserController->renderFile()
+#13 D:\wamp\www\framework\web\CController.php(783): UserController->renderPartial()
+#14 D:\wamp\www\fapp\protected\modules\admin\controllers\UserController.php(143): UserController->render()
+#15 D:\wamp\www\framework\web\actions\CInlineAction.php(50): UserController->actionAdmin()
+#16 D:\wamp\www\framework\web\CController.php(309): CInlineAction->runWithParams()
+#17 D:\wamp\www\framework\web\filters\CFilterChain.php(134): UserController->runAction()
+#18 D:\wamp\www\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#19 D:\wamp\www\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#20 D:\wamp\www\framework\web\filters\CInlineFilter.php(59): UserController->filterAccessControl()
+#21 D:\wamp\www\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#22 D:\wamp\www\framework\web\CController.php(292): CFilterChain->run()
+#23 D:\wamp\www\framework\web\CController.php(266): UserController->runActionWithFilters()
+#24 D:\wamp\www\framework\web\CWebApplication.php(283): UserController->run()
+#25 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#26 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 D:\wamp\www\fapp\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/admin/user/admin
+in D:\wamp\www\fapp\protected\modules\admin\views\user\admin.php (54)
+in D:\wamp\www\fapp\protected\modules\admin\controllers\UserController.php (143)
+in D:\wamp\www\fapp\index.php (13)
+2012/11/14 16:08:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:09:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "assets/1b97d45c/images/logo.png"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('assets/1b97d45c...')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/1b97d45c/images/logo.png
+HTTP_REFERER=http://fapp.test.com/index.php/admin/user/admin
+---
+2012/11/14 16:09:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:09:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "assets/1b97d45c/images/logo.png"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('assets/1b97d45c...')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/1b97d45c/images/logo.png
+HTTP_REFERER=http://fapp.test.com/index.php/admin/user/admin
+---
+2012/11/14 16:09:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:10:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "assets/1b97d45c/images/logo.png"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('assets/1b97d45c...')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/1b97d45c/images/logo.png
+HTTP_REFERER=http://fapp.test.com/index.php/admin/user/admin
+---
+2012/11/14 16:10:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:10:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "assets/1b97d45c/images/logo.png"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('assets/1b97d45c...')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/1b97d45c/images/logo.png
+HTTP_REFERER=http://fapp.test.com/index.php/admin/user/view/id/1
+---
+2012/11/14 16:10:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:10:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "assets/1b97d45c/images/logo.png"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('assets/1b97d45c...')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/1b97d45c/images/logo.png
+HTTP_REFERER=http://fapp.test.com/index.php/admin/user/admin
+---
+2012/11/14 16:10:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:10:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "assets/1b97d45c/images/logo.png"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('assets/1b97d45c...')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/1b97d45c/images/logo.png
+HTTP_REFERER=http://fapp.test.com/index.php/admin/user/
+---
+2012/11/14 16:10:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:10:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:11:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "assets/1b97d45c/images/logo.png"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('assets/1b97d45c...')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/1b97d45c/images/logo.png
+HTTP_REFERER=http://fapp.test.com/index.php/admin/user/
+---
+2012/11/14 16:11:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:11:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:11:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "assets/1b97d45c/images/logo.png"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('assets/1b97d45c...')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/1b97d45c/images/logo.png
+HTTP_REFERER=http://fapp.test.com/index.php/admin/user
+---
+2012/11/14 16:11:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:11:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "assets/1b97d45c/images/logo.png"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('assets/1b97d45c...')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/1b97d45c/images/logo.png
+HTTP_REFERER=http://fapp.test.com/index.php/admin/user/
+---
+2012/11/14 16:11:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:11:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:11:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:11:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "assets/1b97d45c/images/logo.png"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('assets/1b97d45c...')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/1b97d45c/images/logo.png
+HTTP_REFERER=http://fapp.test.com/index.php/admin/user
+---
+2012/11/14 16:11:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:14:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "assets/1b97d45c/images/logo.png"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('assets/1b97d45c...')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/1b97d45c/images/logo.png
+HTTP_REFERER=http://fapp.test.com/index.php/admin/user/
+---
+2012/11/14 16:14:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:14:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:14:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "assets/1b97d45c/images/logo.png"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('assets/1b97d45c...')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/1b97d45c/images/logo.png
+HTTP_REFERER=http://fapp.test.com/index.php/admin/user/admin
+---
+2012/11/14 16:14:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/11/14 16:16:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "assets/1b97d45c/images/logo.png"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('assets/1b97d45c...')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/1b97d45c/images/logo.png
+HTTP_REFERER=http://fapp.test.com/index.php/admin/user/
+---
+2012/11/14 16:16:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\wamp\www\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\wamp\www\framework\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 D:\wamp\www\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\wamp\www\fapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
