@@ -13,7 +13,7 @@ $this->widget('zii.widgets.CMenu', array(
         	'url'=>array('#'), 
         	'itemOptions'=>array('class'=>'menu'),
         	'items'=>array(
-            	array('label'=>'New Arrivals', 'url'=>array('#')),
+            	array('label'=>'用户管理', 'url'=>array('/admin/user/admin')),
             	array('label'=>'Most Popular', 'url'=>array('#')),
         )),
         array('label'=>'Login', 'url'=>array('site/login'), 'visible'=>Yii::app()->user->isGuest),		

@@ -6,6 +6,12 @@
 	background-color:#999;
 	color:#999;
 }
+#container{
+	width:1033px;
+	margin-left: auto;
+    margin-right: auto;
+	
+}
 #content{
 	
 }
@@ -13,11 +19,20 @@
 #left{
 	width:220px;
 	float:left;
+	height:800px;
 }
 
 #left ul li ul li{
 	list-style:none;
 }
 #right{
-	float:left;
+	margin-left:230px;
+	width:auto;
+}
+.menu ul{
+	display:none;
+}
+ul {
+	margin:0px;
+	padding:0px;
 }
