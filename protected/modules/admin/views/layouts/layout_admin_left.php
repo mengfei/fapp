@@ -31,22 +31,19 @@ $this->widget('zii.widgets.CMenu', array(
 <script>
 $(function(){
 	$(".head").each(function(i){
-        $(this).click(function(){
-            if(!$(this).hasClass("selected")){
-                $(".head").removeClass("selected");
-                $(".head").parent().removeClass("selected");
-                $(this).addClass("selected");
-                $(this).find("a").first().addClass("hover");
-                $(this).parent().addClass("selected");
-            }      
-        });  
-	});
-    /*$(".head").next().find("a").click(function(){
-        if(!$(this).hasClass("hover")){
-            $(this).parent().parent().find("a").removeClass("hover");
-            $(this).addClass("hover");
+        if($(this).next().find("li").hasClass("active")){
+            $(this).parent().addClass("selected");
         }
-    });*/
-    
+        $(this).click(function(){
+            $(".head").parent().removeClass("selected");
+            $(this).parent().addClass("selected"); 
+            if(!$(this).next().find("li").hasClass("active")){
+                $(this).parent().parent().find("a").removeClass("active hover");
+                $(this).next().find("li").eq(0).addClass("active hover");    
+            }
+            return false;  
+        });  
+
+	});    
 });
 </script>
