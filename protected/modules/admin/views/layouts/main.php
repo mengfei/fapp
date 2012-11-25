@@ -13,7 +13,7 @@
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
-<body>
+<body style="margin:auto;">
 
 <div id="container">
 	<div id="header">
@@ -27,10 +27,13 @@
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
 	</div>
-	<div id="content">
-		<div id="left">
+	<div id="content" class="row">
+		<div id="left">		
 		<?php include(dirname(__FILE__)."/layout_admin_left.php");?>
 		</div>
+		<div class="nav-gap">    
+		</div>	
+		<div class="clear"></div>
 		<div id="right">
 			<?php echo $content; ?>
 		</div>

@@ -10,8 +10,8 @@ return array(
 	'name'=>'My Web Application',
 	'language'=>'zh_cn',
 
-	// preloading 'log' component
-	'preload'=>array('log'),
+	// preloading 'log' component Bootstrap component
+	'preload'=>array('log','bootstrap'),
 
 	// autoloading model and component classes
 	'import'=>array(
@@ -39,7 +39,10 @@ return array(
 			'allowAutoLogin'=>true,
 		),
 		// uncomment the following to enable URLs in path-format
-		
+		'bootstrap'=>array(
+			// assuming you extracted bootstrap under extensions
+			'class'=>'ext.bootstrap.components.Bootstrap',
+		),
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			/* 'rules'=>array(
