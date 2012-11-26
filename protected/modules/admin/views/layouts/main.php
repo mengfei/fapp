@@ -32,8 +32,7 @@
 		<?php include(dirname(__FILE__)."/layout_admin_left.php");?>
 		</div>
 		<div class="nav-gap">    
-		</div>	
-		<div class="clear"></div>
+		</div>
 		<div id="right">
 			<?php echo $content; ?>
 		</div>

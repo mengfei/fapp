@@ -28,27 +28,18 @@ $('.search-form form').submit(function(){
 
 <h1>管理用户</h1>
 
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'user-grid',
-	'htmlOptions'=>array('class'=>''),
-	'itemsCssClass'=>'table table-bordered',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'pagerCssClass'=>'pagination',
-	'columns'=>array(
-		'id',
-		'username',
-		'email',
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
+<?php $this->widget('bootstrap.widgets.TbGridView', array(
+    'type'=>'striped bordered condensed',
+    'dataProvider'=>$model->search(),
+    'template'=>"{items}",
+    'columns'=>array(
+        array('name'=>'id', 'header'=>'#'),
+        array('name'=>'username', 'header'=>'username'),
+        array('name'=>'email', 'header'=>'email'),
+        array(
+        	//'name'=>'manager',
+            'class'=>'bootstrap.widgets.TbButtonColumn',
+            'htmlOptions'=>array('style'=>'width: 50px'),
+        ),
+    ),
 )); ?>

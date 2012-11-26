@@ -156,7 +156,7 @@ body{
 	padding:0px;
 	text-indent:0px;
 	display:none;
-	height:60px;
+	height:120px;
 }
 .selected ul{
 	display:block;
@@ -187,4 +187,39 @@ body{
 	background-color: #add2da;
 	height:800px;
 	float:left;
+}
+
+#right{
+	float:left;
+	width:830px;
+	margin-left:6px;
+}
+#right .form .row{
+	margin-left:10px;
+}
+.form .row label{
+	width:100px;
+	float:left;
+}
+.view .row{
+	margin: 0;
+	line-height:30px;
+}
+.view_row_1{
+	width:160px;
+	text-align: center;
+	display:block;
+	float:left;
+}
+.view_row_2{
+	text-align: center;
+	display:block;
+	float:left;
+}
+
+
+#footer{
+	margin:0 auto;
+	padding: 0 auto;
+	text-align: center;
 }
