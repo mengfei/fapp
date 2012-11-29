@@ -22,6 +22,17 @@ $this->widget('zii.widgets.CMenu', array(
         	'items'=>array(
             	array('label'=>'类型管理', 'url'=>array('/admin/type/admin'),'active'=>Yii::app()->controller->id == "type" && Yii::app()->controller->action->id=="admin"),
             	array('label'=>'类型列表', 'url'=>array('/admin/type/'),'active'=>(Yii::app()->controller->id == "type" && (Yii::app()->controller->action->id=="index" ||Yii::app()->controller->action->id==""))),
+                array('label'=>'类型添加', 'url'=>array('/admin/type/create'),'active'=>(Yii::app()->controller->id == "type" && Yii::app()->controller->action->id=="create" )),
+        )),
+
+        array('label'=>'文章管理', 
+            'url'=>array('###'), 
+            'itemOptions'=>array('class'=>''),
+            'linkOptions'=>array('class'=>'head'),
+            'items'=>array(
+                array('label'=>'文章管理', 'url'=>array('/admin/article/admin'),'active'=>Yii::app()->controller->id == "article" && Yii::app()->controller->action->id=="admin"),
+                array('label'=>'文章列表', 'url'=>array('/admin/article/'),'active'=>(Yii::app()->controller->id == "article" && (Yii::app()->controller->action->id=="index" ||Yii::app()->controller->action->id==""))),
+                array('label'=>'文章添加', 'url'=>array('/admin/article/create'),'active'=>(Yii::app()->controller->id == "article" && Yii::app()->controller->action->id=="create" )),
         )),
     	
     ),
