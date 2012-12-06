@@ -45,7 +45,7 @@ return array(
 		),
 		'urlManager'=>array(
 			'urlFormat'=>'path',
-		    'showScriptName'=>false,
+		    'showScriptName'=>false, //去除YII链接中index.php 但是访问项目的index.php 通过.haccess文件去除
 			/* 'rules'=>array(
 				'<module:\w+>/<controller:\w+>/<action:\w+>'=>'<module>/<controller>/<action>',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
