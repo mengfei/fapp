@@ -1,2 +1,4 @@
 bin
 .metadata
+assets/
+protected/runtime/
