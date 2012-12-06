@@ -45,6 +45,7 @@ return array(
 		),
 		'urlManager'=>array(
 			'urlFormat'=>'path',
+		    'showScriptName'=>false,
 			/* 'rules'=>array(
 				'<module:\w+>/<controller:\w+>/<action:\w+>'=>'<module>/<controller>/<action>',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
