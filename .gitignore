@@ -1,2 +1,5 @@
 bin
 .metadata
+.settings/
+*.project
+protected/moudles/admin/images/*.db
