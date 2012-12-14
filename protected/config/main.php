@@ -54,8 +54,12 @@ return array(
 			), 
 		),
 		
-		'db'=>array(
+		'db_admin'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
+		),
+
+		'db'=>array(
+			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/blog.db',
 		),
 		// uncomment the following to use a MySQL database
 		/*
