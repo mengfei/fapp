@@ -1,4 +1,3 @@
-deny from all
 <IfModule rewrite_module>
     Options +FollowSymLinks
     IndexIgnore */*

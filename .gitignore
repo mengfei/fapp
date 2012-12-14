@@ -1,5 +1,10 @@
 bin
 .metadata
+<<<<<<< HEAD
 .settings/
 *.project
 protected/moudles/admin/images/*.db
+=======
+assets/
+protected/runtime/
+>>>>>>> c0c16d7ea6d86a600594b988fc9353e2010beee2
