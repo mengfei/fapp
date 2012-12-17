@@ -95,6 +95,7 @@ class SiteController extends Controller
 				$this->redirect(Yii::app()->user->returnUrl);
 		}
 		// display the login form
+		var_dump($model);
 		$this->render('login',array('model'=>$model));
 	}
 
