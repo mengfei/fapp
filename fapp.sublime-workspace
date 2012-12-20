@@ -19,20 +19,40 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 81.0,
+		"height": 375.0,
 		"selected_items":
 		[
 			[
-				"install",
-				"Package Control: Install Package"
+				"git",
+				"Git: Status"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"git commit  ",
+				"Git: Commit"
+			],
+			[
+				"git ",
+				"Git: Commit"
+			],
+			[
+				"git pull ",
+				"Git: Pull Current Branch"
 			],
 			[
 				"git pull",
 				"Git: Pull Current Branch"
 			],
 			[
-				"git pull ",
-				"Git: Pull Current Branch"
+				"git log",
+				"Git: Log All"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
 			],
 			[
 				"git c",
@@ -43,14 +63,6 @@
 				"Git: Status"
 			],
 			[
-				"git ",
-				"Git: Status"
-			],
-			[
-				"git",
-				"Git: Commit"
-			],
-			[
 				"git commit",
 				"Git: Amend Commit"
 			],
@@ -59,7 +71,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 536.0
+		"width": 522.0
 	},
 	"console":
 	{
@@ -76,6 +88,7 @@
 	},
 	"file_history":
 	[
+		"/D/wamp/www/fapp/.gitignore",
 		"/C/Users/zdsenve/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/D/wamp/www/fapp/fapp.sublime-workspace",
 		"/C/Users/zdsenve/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
@@ -131,8 +144,8 @@
 						"selection":
 						[
 							[
-								2651,
-								2651
+								643,
+								643
 							]
 						],
 						"settings":
@@ -229,7 +242,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2087.0,
+						"translation.y": 264.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -243,7 +256,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 40.0
 	},
 	"layout":
 	{
