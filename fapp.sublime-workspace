@@ -19,9 +19,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 150.0,
+		"height": 81.0,
 		"selected_items":
 		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
 			[
 				"git pull",
 				"Git: Pull Current Branch"
@@ -51,10 +55,6 @@
 				"Git: Amend Commit"
 			],
 			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
 				"insta",
 				"Package Control: Install Package"
 			]
@@ -76,6 +76,7 @@
 	},
 	"file_history":
 	[
+		"/C/Users/zdsenve/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/D/wamp/www/fapp/fapp.sublime-workspace",
 		"/C/Users/zdsenve/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
 		"/C/Users/zdsenve/AppData/Roaming/Sublime Text 2/Packages/Package Control/Package Control.sublime-settings",
@@ -130,8 +131,8 @@
 						"selection":
 						[
 							[
-								2708,
-								2708
+								2651,
+								2651
 							]
 						],
 						"settings":
