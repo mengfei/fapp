@@ -1,15 +1,12 @@
 bin
 .metadata
-<<<<<<< HEAD
+
 .settings/
 *.project
 protected/moudles/admin/images/*.db
-=======
+
 assets/
 protected/runtime/
-<<<<<<< HEAD
+
 .sublime-project
 .sublime-workspace
-=======
->>>>>>> c0c16d7ea6d86a600594b988fc9353e2010beee2
->>>>>>> 70b810c85b71d127e2eabd05ec377c471e9534a8
