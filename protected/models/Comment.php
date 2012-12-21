@@ -18,6 +18,8 @@
  */
 class Comment extends CActiveRecord
 {
+	consts STATUS_PENDING = 1;
+	consts STATUS_APROVED = 2; 
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.

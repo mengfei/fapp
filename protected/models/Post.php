@@ -45,18 +45,21 @@ class Post extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, content, status, author_id', 'required'),
-			array('status, create_time, update_time, author_id', 'numerical', 'integerOnly'=>true),
+			array('title, content, status', 'required'),
 			array('title', 'length', 'max'=>128),
-			array('tags', 'safe'),
+			array('status','in','range',array(1,2,3)),
+			array('tags', 'match','pattern'=>'/^[\w\s,]+$/',
+				'message'=>'Tgas can only contain word characters.'),
+			array('tags','normalizeTags'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, title, content, tags, status, create_time, update_time, author_id', 'safe', 'on'=>'search'),
+			array('title,status','safe', 'on'=>'search'),
 		);
 	}
 
 	/**
 	 * @return array relational rules.
+	 * 关联规则
 	 */
 	public function relations()
 	{
@@ -64,7 +67,11 @@ class Post extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'author' => array(self::BELONGS_TO, 'User', 'author_id'),
-			'comments' => array(self::HAS_MANY, 'Comment', 'post_id'),
+			'comments' => array(self::HAS_MANY, 'Comment', 'post_id',
+						'condition'=>'comments.status='.Comment::STATUS_APPROVED,
+						'order'=>'comments.create_time desc'
+				),
+			'commentCount' => array(self::STAT,'Comment', 'post_id','condition'=>'status='.Comment::STATUS_APPROVED)
 		);
 	}
 
@@ -108,5 +115,30 @@ class Post extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	/**
+	 * [normalizeTags description]  
+	 * validate方法
+	 * @param  [type] $attrbute [description]
+	 * @param  [type] $params   [description]
+	 * @return [type]           [description]
+	 */
+	public function normalizeTags($attrbute,$params)
+	{
+		$this->tags = Tag::array2string(array_unique(Tag::string2array($this->tags)));
+	}
+
+	/**
+	 * [getUrl description]
+	 * 添加日志的标题作为URL中的一个GET参数
+	 * 主要为了引擎优化(SEO)
+	 * @return [type] [description]
+	 */
+	public function getUrl()
+	{
+		return Yii::app()->createUrl('post/view',array(
+				'id'=>$this->id,
+				'title'=>$this->title
+			));
 	}
 }

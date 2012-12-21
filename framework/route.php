@@ -2,9 +2,6 @@
 
 class Route{
 
-	public static function createWebApplication(){
-
-	}
 	public static function run(){
 		//引入配置文件
 		$config = Config::initConfig();
