@@ -12,6 +12,9 @@
  */
 class Look extends CActiveRecord
 {
+	//存储数字和字符的映射
+	private static $_items = array();
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -92,5 +95,35 @@ class Look extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+
+	public static function items($type)
+	{
+		if(!isset($_items[$type])){
+			self::loadItems($type);
+		}
+		return self::$_items[$type];
+	}
+
+	public static function item($type,$code)
+	{
+		if(!isset(self::$_items[$type])){
+			self::loadItems($type);
+		}
+		return isset(self::$_items[$type][$code])?self::$_items[$type][$code]:false;
+	}
+
+	public static function loadItems($type)
+	{
+		self::$_items[$type] = array();
+		$models = self::model()->findAll(array(
+				'condition'=>'type=:type',
+				'params'=>array(":type"=>$type),
+				'order'=>'position'
+				)
+			);
+		foreach ($models as $model) {
+			self::$_items[$type][$model->code] = $model->name;
+		}
 	}
 }

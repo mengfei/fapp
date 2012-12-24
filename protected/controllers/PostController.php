@@ -2,6 +2,12 @@
 
 class PostController extends Controller
 {
+
+	const STATUS_DRAFT = 1;
+	const STATUS_PUBLISHED = 2;
+	const STATUS_ARCHIVED = 3;
+
+	private $_model;
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -31,11 +37,11 @@ class PostController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				//'actions'=>array('create','update','admin','delete'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array(''),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -50,8 +56,11 @@ class PostController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$post = $this->loadModel();
+		$comment = $this->newComment($post);
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$post,
+			'comment'=>$comment,
 		));
 	}
 
@@ -127,10 +136,26 @@ class PostController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Post');
+		/*$dataProvider=new CActiveDataProvider('Post');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+		));*/
+
+		//获取过滤条件
+		$criteria = new CDbCriteria(array(
+				'condition'=>'status='.self::STATUS_PUBLISHED,
+				'order'=>'update_time DESC',
+				'with'=>'commentCount'
+			));
+		if(isset($_GET['tag'])){
+			$criteria->addSearchCondition('tags',$_GET['tag']);
+		}
+		//h获取渲染视图的数据 分页
+		$dataProvider = new CActiveDataProvider('Post',array(
+			'pagination'=>array('pageSize'=>3),
+			'criteria'=>$criteria,
 		));
+		$this->render('index',array('dataProvider'=>$dataProvider));	
 	}
 
 	/**
@@ -138,7 +163,7 @@ class PostController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Post('search');
+		$model=new Post('search');//创建search场景(scenario)下的Post模型
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Post']))
 			$model->attributes=$_GET['Post'];
@@ -153,13 +178,13 @@ class PostController extends Controller
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer the ID of the model to be loaded
 	 */
-	public function loadModel($id)
+	/*public function loadModel($id)
 	{
 		$model=Post::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
-	}
+	}*/
 
 	/**
 	 * Performs the AJAX validation.
@@ -172,5 +197,41 @@ class PostController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+
+	public function loadModel()
+	{
+		if($this->_model === null){
+			if(isset($_GET['id'])){
+				if(Yii::app()->user->isGuest){
+					$condition = 'status='.Post::STATUS_PUBLISHED.' OR status='.POST::STATUS_ARCHIVED;
+				}else{
+					$condition = '';
+					$this->_model = Post::model()->findByPk($_GET['id'],$condition);
+				}	
+			}
+			if($this->_model === null){
+					throw new CHttpException(404,'The requested page does not exist.');
+			}
+		}
+		return $this->_model;
+	}
+
+	protected function newComment($post)
+	{
+		$comment = new Comment;
+		if(isset($_POST['ajax']) && $_POST['ajax'] == 'comment-form'){
+			echo CActiveForm::validate($comment);
+			Yii::app()->end();
+		}
+		if(isset($_POST['Comment'])){
+			$comment->attributes = $_POST['Comment'];
+			if($post->addComment($comment)){
+				if($comment->status == Comment::STATUS_PENDING)
+					Yii::app()->user->setFlash('commentSubmitted','Thank you');
+				$this->refresh();
+			}
+		}
+		return $comment;
 	}
 }

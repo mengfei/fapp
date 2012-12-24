@@ -18,8 +18,9 @@
  */
 class Comment extends CActiveRecord
 {
-	consts STATUS_PENDING = 1;
-	consts STATUS_APROVED = 2; 
+	const STATUS_PENDING = 1;
+	const STATUS_APPROVED = 2;
+	const STATUS_ARCHIVED = 3; 
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -46,12 +47,13 @@ class Comment extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('content, status, author, email, post_id', 'required'),
-			array('status, create_time, post_id', 'numerical', 'integerOnly'=>true),
+			array('content, author, email', 'required'),
+			// array('status, create_time, post_id', 'numerical', 'integerOnly'=>true),
 			array('author, email, url', 'length', 'max'=>128),
+			array('url','url'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, content, status, create_time, author, email, url, post_id', 'safe', 'on'=>'search'),
+			// array('id, content, status, create_time, author, email, url, post_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -73,13 +75,13 @@ class Comment extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
+			'id' => 'Id',
 			'content' => 'Content',
 			'status' => 'Status',
 			'create_time' => 'Create Time',
 			'author' => 'Author',
 			'email' => 'Email',
-			'url' => 'Url',
+			'url' => 'Website',
 			'post_id' => 'Post',
 		);
 	}
@@ -107,5 +109,18 @@ class Comment extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+
+	protected function beforeSave()
+	{
+		if(parent::beforeSave())
+		{
+			if($this->isNewRecord)
+			{
+				$this->create_time = time();
+			}
+			return true;
+		}else
+			return false;
 	}
 }

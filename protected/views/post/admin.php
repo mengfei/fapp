@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	'Posts'=>array('index'),
+	// 'Posts'=>array('index'),
 	'Manage',
 );
 
@@ -25,29 +25,40 @@ $('.search-form form').submit(function(){
 
 <h1>Manage Posts</h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
+<?php /*$this->renderPartial('_search',array(
 	'model'=>$model,
-)); ?>
+));*/ ?>
 </div><!-- search-form -->
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'post-grid',
+	// 'id'=>'post-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
+		//$data 表示一个post对象?
+		array(
+			'name'=>'title',
+			'type'=>'raw',
+			'value'=>'CHtml::link(Chtml::encode($data->title),$data->url)'
+			),
+		array(
+			'name'=>'status',
+			'value'=>'Look::item("PostStatus",$data->status)',
+			'filter'=>Look::items("PostStatus"),//过滤下拉列表
+			),
+		array(
+			'name'=>'create_time',
+			'type'=>'datetime',
+			'filter'=>false,//不过滤
+			),
+		/*'id',
 		'title',
 		'content',
 		'tags',
 		'status',
-		'create_time',
+		'create_time',*/
 		/*
 		'update_time',
 		'author_id',
