@@ -1,5 +1,5 @@
 <div class="comment" id="c<?php echo $data->id;?>">
-
+<?php //var_dump($data->post);exit();?>
 	<?php echo CHtml::link("#{$data->id}",$data->url,array(
 		'class'=>'cid',
 		'title'=>'Permalink to this comment',
@@ -7,14 +7,14 @@
 
 	<div class="author">
 		<?php echo $data->authorLink;?> says on
-		<?php echo Chtml::link(CHtml::encode($data->post->title),$data->post->url);?>
+		<?php //echo CHtml::link(CHtml::encode($data->post->title),$data->post->url);?>
 	</div>
 
 	<div class="time">
 		<?php if($data->status == Comment::STATUS_PENDING):?>
 			<span class="pending">Pending approval</span>
 			<?php echo CHtml::linkButton('Approve',array(
-				'submit'=>array('comment/approve',id=>$data->id),
+				'submit'=>array('comment/approve','id'=>$data->id),
 			))?>
 		<?php endif; ?>
 		<?php echo CHtml::link('update',array('comment/update','id'=>$data->id))?>

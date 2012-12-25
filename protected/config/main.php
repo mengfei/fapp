@@ -46,12 +46,13 @@ return array(
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 		    'showScriptName'=>false, //去除YII链接中index.php 但是访问项目的index.php 通过.haccess文件去除
-			/*'rules'=>array(
-				'<module:\w+>/<controller:\w+>/<action:\w+>'=>'<module>/<controller>/<action>',
+			'rules'=>array(
+				//'<module:\w+>/<controller:\w+>/<action:\w+>'=>'<module>/<controller>/<action>',
+				'post/<id:\d+>/<title:.*?>'=>'post/view',
 				//'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				//'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
-				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-			),*/ 
+				//'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+			), 
 		),
 		
 		'db_admin'=>array(
@@ -84,11 +85,12 @@ return array(
 					'levels'=>'error, warning',
 				),
 				// uncomment the following to show log messages on web pages
-				/*
+				
 				array(
 					'class'=>'CWebLogRoute',
+					'levels'=>'trace, info, error, warning',
 				),
-				*/
+				
 			),
 		),
 	),

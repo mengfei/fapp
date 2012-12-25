@@ -20,7 +20,6 @@ class Comment extends CActiveRecord
 {
 	const STATUS_PENDING = 1;
 	const STATUS_APPROVED = 2;
-	const STATUS_ARCHIVED = 3; 
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -117,10 +116,33 @@ class Comment extends CActiveRecord
 		{
 			if($this->isNewRecord)
 			{
+				$this->status = Comment::STATUS_PENDING;
 				$this->create_time = time();
+				$this->post_id = Yii::app()->user->id;
 			}
 			return true;
 		}else
 			return false;
+	}
+
+	public function getUrl($post=null)
+	{
+		if($post===null)
+			$post=$this->post;
+		return $post->url.'#c'.$this->id;
+	}
+
+	public function getAuthorLink()
+	{
+		if(!empty($this->url))
+			return CHtml::link(CHtml::encode($this->author),$this->url);
+		else
+			return CHtml::encode($this->author);
+	}
+
+	public function approve()
+	{
+		$this->status = Comment::STATUS_APPROVED;
+		$this->update(array('status'));
 	}
 }

@@ -46,7 +46,7 @@ $('.search-form form').submit(function(){
 		array(
 			'name'=>'status',
 			'value'=>'Look::item("PostStatus",$data->status)',
-			'filter'=>Look::items("PostStatus"),//过滤下拉列表
+			'filter'=>Look::items("PostStatusp"),//过滤下拉列表
 			),
 		array(
 			'name'=>'create_time',

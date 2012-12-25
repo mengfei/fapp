@@ -3,9 +3,7 @@
 class PostController extends Controller
 {
 
-	const STATUS_DRAFT = 1;
-	const STATUS_PUBLISHED = 2;
-	const STATUS_ARCHIVED = 3;
+	
 
 	private $_model;
 	/**
@@ -143,7 +141,7 @@ class PostController extends Controller
 
 		//获取过滤条件
 		$criteria = new CDbCriteria(array(
-				'condition'=>'status='.self::STATUS_PUBLISHED,
+				'condition'=>'status='.Post::STATUS_PUBLISHED,
 				'order'=>'update_time DESC',
 				'with'=>'commentCount'
 			));
@@ -204,12 +202,13 @@ class PostController extends Controller
 		if($this->_model === null){
 			if(isset($_GET['id'])){
 				if(Yii::app()->user->isGuest){
-					$condition = 'status='.Post::STATUS_PUBLISHED.' OR status='.POST::STATUS_ARCHIVED;
+					$condition = 'status='.Post::STATUS_PUBLISHED.' OR status='.Post::STATUS_ARCHIVED;
 				}else{
-					$condition = '';
-					$this->_model = Post::model()->findByPk($_GET['id'],$condition);
+					$condition = '';					
 				}	
+				$this->_model = Post::model()->findByPk($_GET['id'],$condition);
 			}
+			
 			if($this->_model === null){
 					throw new CHttpException(404,'The requested page does not exist.');
 			}

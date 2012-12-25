@@ -8,6 +8,8 @@ class CommentController extends Controller
 	 */
 	public $layout='//layouts/column2';
 
+	private $_model;
+
 	/**
 	 * @return array action filters
 	 */
@@ -31,11 +33,11 @@ class CommentController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','admin','delete','approve'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array(),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -157,12 +159,16 @@ class CommentController extends Controller
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer the ID of the model to be loaded
 	 */
-	public function loadModel($id)
+	public function loadModel()
 	{
-		$model=Comment::model()->findByPk($id);
-		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
-		return $model;
+		if($this->_model===null)
+		{
+			if(isset($_GET['id']))
+				$this->_model=Comment::model()->findbyPk($_GET['id']);
+			if($this->_model===null)
+				throw new CHttpException(404,'The requested page does not exist.');
+		}
+		return $this->_model;
 	}
 
 	/**
@@ -188,9 +194,5 @@ class CommentController extends Controller
 			throw new CHttpException(400,'Invalid request...');
 	}
 
-	public function approve()
-	{
-		$this->status = Comment::STATUS_APPROVED;
-		$this->update(array('status'));
-	}
+	
 }

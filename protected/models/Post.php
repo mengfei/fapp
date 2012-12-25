@@ -20,6 +20,10 @@
 class Post extends CActiveRecord
 {
 	private $_oldTags;
+
+	const STATUS_DRAFT = 1;
+	const STATUS_PUBLISHED = 2;
+	const STATUS_ARCHIVED = 3;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -66,10 +70,11 @@ class Post extends CActiveRecord
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
+		// 根据关联关系 查询POST信息时,会惰性查询关联表的信息
 		return array(
 			'author' => array(self::BELONGS_TO, 'User', 'author_id'),
 			'comments' => array(self::HAS_MANY, 'Comment', 'post_id',
-						'condition'=>'comments.status='.Comment::STATUS_ARCHIVED,
+						'condition'=>'comments.status='.Comment::STATUS_APPROVED,
 						'order'=>'comments.create_time desc'
 				),
 			'commentCount' => array(self::STAT,'Comment', 'post_id','condition'=>'status='.Comment::STATUS_APPROVED)
